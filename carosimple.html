@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carosimple</title>
+</head>
+<body>
+    <h3>Caro game simple</h3>
+    <p id="carogame"></p>
+    <button type="button" id="changeValue">Change value</button>
+<script>
+    let board = [];
+    let data = "";
+    for(let i=0;i<5;i++){
+        board[i] = [0,0,0,0,0];
+    }
+    for (let i =0;i<5;i++){
+        data += "<br>";
+        for(let j=0;j<5;j++){
+            data += board[i][j] + " " + " ";
+        }
+    }
+    document.getElementById("carogame").innerHTML = data;
+    document.getElementById("changeValue").addEventListener('click',function (){
+        let x = prompt("Nhap gia tri x:");
+        let y = prompt("Nhap gia tri y:");
+        board[x][y] = " x ";
+        data = "";
+        for(let i = 0;i<5;i++){
+            for(j=0;j<5;j++){
+                data+= board[i][j] + " "
+            }
+            data += "<br>"
+        }
+        document.getElementById("carogame").innerHTML = data;
+    })
+</script>
+</body>
+</html>
